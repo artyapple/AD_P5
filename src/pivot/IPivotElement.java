@@ -1,7 +1,9 @@
 package pivot;
 
+import element.IElement;
+
 public interface IPivotElement {
 	
-	public int getPivotIndex(int startIndex, int endIndex);
+	public <T> long getPivot(int startIndex, int endIndex, IElement<T>[] a);
 
 }

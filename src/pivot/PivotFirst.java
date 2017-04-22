@@ -1,12 +1,12 @@
 package pivot;
 
+import element.IElement;
 
 public class PivotFirst implements IPivotElement {
 
 	@Override
-	public int getPivotIndex(int startIndex, int endIndex) {
-		// TODO Auto-generated method stub
-		return 0;
+	public <T> long getPivot(int startIndex, int endIndex, IElement<T>[] a) {
+		return a[startIndex].getKey();
 	}
 
 }
