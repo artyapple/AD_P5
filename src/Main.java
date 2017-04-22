@@ -1,5 +1,6 @@
 import element.Element;
 import pivot.IPivotElement;
+import pivot.PivotMedian;
 import pivot.PivotRandom;
 import sort.QuickSort;
 import sort.SortingAlgorithm;
@@ -12,6 +13,14 @@ public class Main {
     	IPivotElement p = new PivotRandom();
 		SortingAlgorithm alg = new QuickSort(p);
 		Element<String>[] array = initData();
+		
+//		printArray(array);
+//		alg.sort(array);
+//		printArray(array);
+		
+		IPivotElement p2 = new PivotMedian();
+		alg = new QuickSort(p2);
+		array = initData();
 		
 		printArray(array);
 		alg.sort(array);
