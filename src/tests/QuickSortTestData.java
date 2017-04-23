@@ -1,6 +1,6 @@
 package tests;
 
-public class TestData {
+public class QuickSortTestData {
 	
 	public static final int TEST_TOTAL = 3;
 	

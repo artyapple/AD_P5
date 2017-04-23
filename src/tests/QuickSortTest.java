@@ -25,11 +25,11 @@ public class QuickSortTest {
 	@SuppressWarnings("unchecked")
 	@Before
 	public void before() {
-		for(long[] set : TestData.KEY_SETS){
+		for(long[] set : QuickSortTestData.KEY_SETS){
 			int i = 0;
 			Element<String>[] testSet = new Element[set.length];
 			for (long key : set) {
-				testSet[i] = new Element<String>(key, TestData.TEST_ELEMENT_DATA);
+				testSet[i] = new Element<String>(key, QuickSortTestData.TEST_ELEMENT_DATA);
 				i++;
 			}
 			testData.add(testSet);
@@ -67,10 +67,10 @@ public class QuickSortTest {
 	}
 
 	private void executeTests(){
-		for(int i=0;i< TestData.TEST_TOTAL;i++){
+		for(int i=0;i< QuickSortTestData.TEST_TOTAL;i++){
 			array = testData.get(i);
 			alg.sort(array);
-			testList(TestData.SORTED_KEY_SETS[i]);
+			testList(QuickSortTestData.SORTED_KEY_SETS[i]);
 		}
 	}
 	
