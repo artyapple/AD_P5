@@ -1,9 +1,10 @@
 package sort;
 
+import counter.Counter;
 import element.IElement;
 import pivot.IPivotElement;
 
-public class QuickSort implements SortingAlgorithm {
+public class QuickSort extends Counter implements SortingAlgorithm {
 
 	private IPivotElement p;
 
@@ -20,15 +21,18 @@ public class QuickSort implements SortingAlgorithm {
 	}
 
 	private <T> void quicksort(int left, int right, IElement<T>[] a) {
+		incrCalls();
 		int i = left, j = right;
 		long pivot = p.getPivot(left, right, a);
 
 		while (i <= j) {
 			while (a[i].getKey() < pivot) {
 				i++;
+				incrCompares();
 			}
 			while (a[j].getKey() > pivot) {
 				j--;
+				incrCompares();
 			}
 
 			if (i <= j) {
@@ -44,6 +48,7 @@ public class QuickSort implements SortingAlgorithm {
 	}
 
 	private <T> void swap(int i, int j, IElement<T>[] a) {
+		incrSwaps();
 		IElement<T> tmp;
 		tmp = a[i];
 		a[i] = a[j];
